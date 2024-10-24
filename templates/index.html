@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login and Signup Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <section class="container forms">
+        {% if messages %}
+        <div class="alerts">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }} 
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Login Form -->
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="field input-field">
+                        <input type="email" name="email" placeholder="Email" class="input" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" name="password" placeholder="Password" class="password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgotpassword-link">Forgot password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+
+                <div class="form-link">
+                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <i class="fa-brands fa-google googleicon"></i>
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form signup">
+            <div class="form-content">
+                <header>Signup</header>
+                <form action="{% url 'signup' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="field input-field">
+                        <input type="text" name="first_name" placeholder="First name" class="input" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="text" name="last_name" placeholder="Last name" class="input" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="email" name="email" placeholder="Email" class="input" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" name="password" placeholder="Create password" class="password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Signup</button>
+                    </div>
+                </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Signup with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <i class="fa-brands fa-google googleicon"></i>
+                    <span>Signup with Google</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div class="form forgotpasswordform" style="display: none;">
+            <div class="form-content">
+                <header>Forgot Password</header>
+                <form action="{% url 'forgot_password' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="field input-field">
+                        <input type="email" name="email" placeholder="Email" class="input" required>
+                    </div>
+                    <div class="field button-field newbtnbox">
+                        <button type="submit">Send</button>
+                        <button type="button" class="backbtn">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

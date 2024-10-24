@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>connect four master</title>
+    <link rel="stylesheet" href="{%static 'game/style.css' %}">
+</head>
+<body>
+    <div class="show-pop">
+      <button class="logout">
+        <a href="{% url "logout" %}">logout</a>
+      </button>
+        <div class="text">
+        <h1>Welcome to Game World</h1>
+    </div>
+    <div class="game-outer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="game-open-box">
+<button class=" opengame">Start game</button>
+</div></div>
+    </div>
+    <div class="game-body active">
+    <div class="container active ">
+        <div class="info">
+            <h1>connect-4 master game </h1>
+            <div class="player"><span class="first">player1 </span> <span class="color1"></span> <span class="vst">vs</span> <span class="second">player2 </span><span class="color2"></span></div>
+            <div class="bg-winner active">
+                <div class="celebrate"></div>
+                <div class="win-visual active"></div>
+            <div class="winner active"> <span class="playerwin"></span>
+            <div class=" home"><button class="reset" type="reset">Restart game</button></div></div></div>
+            <div class="chance "></div>
+            
+        </div>
+
+        <div class="connect-4-game">
+     <div class="cell "></div>
+    <div class="cell "></div>
+    <div class="cell "></div>
+    <div class="cell "></div>
+    <div class="cell "></div>
+    <div class="cell "></div>
+    <div class="cell "></div>
+      <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+ <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+<div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+            <div class="cell "></div>
+    </div>
+
+    </div>
+    <form   id="form" class="firstbox "   >
+        <h2>Enter players names</h2>
+        <h3>choose color</h3>
+    <div class="user-box">
+        <div class="select-1 select">
+            <div class="input-box success">
+            <input value=" " type="text" class="active" id="firstplayer" placeholder="player-1"> <span class="error"></span>
+        </div>
+        <div class="input-box success">
+            <input value=" " type="color" class="active" id="p1col" required>
+            <span class="error"></span>
+        </div>
+    </div>
+        <div class="vs">VS</div>
+        <div class="select-2 select">
+            <div class="input-box success">
+            <input value=" " type="text" class="active" id="secondplayer" placeholder="player-2"> 
+            <span class="error"></span>
+        </div>
+        <div class="input-box success">
+            <input value=" " type="color" class="active" id="p2col" required>
+            <span class=" error error2"></span>
+        </div>
+        </div>
+    </div>
+    
+    <div class="btn-sub">
+        <!-- <input type="submit" value="submit" class="btn"> -->
+        <button type="submit" class="btn">submit</button>
+
+</div>
+</form>
+</div>
+<script defer src="{%static 'game/game.js' %}"></script>
+</body>
+<!-- <script src="game.js"></script> -->
+<!-- <script src="game2.js"></script> -->
+</html>
